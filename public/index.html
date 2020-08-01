@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    
+    <!-- Mis hojas de estilo y Script -->
+    <script type="module" src="./dist/app.js" defer></script>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Segundo Parcial Lab III</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">            
+            <a href="./"><img src="./img/logo.png" alt="logo de la empresa" height="25%" width="200px"></a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Anuncios</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+                </li>
+              </ul>
+        </nav>
+        
+        <div id="imgContainer">
+            <img id="banner" src="./img/banner.png" alt="Banner">
+        </div>    
+        
+        <!-- No se utiliza si se trabaja con localStorage -->     
+        <!-- <div id="modal">
+            <img src="./img/volante_spinner.gif" alt="Spinner" id="modal-content">
+        </div> -->
+        
+        <h1>Administración</h1>
+
+        
+        <fieldset>
+            <legend>Completar el anuncio</legend>
+            
+            <form action="#" id="myForm" class="item form">
+                
+                <label for="txtTitulo">TITULO</label>
+                <input type="text" name="titulo" id="txtTitulo" placeholder="Titulo" required>
+                
+                <label for="transaccion">TRANSACCIÓN:</label>
+                <select  name="transaccion" id="transaccion" required>
+                    <option value="" disabled selected>---Elegir Transacción---</option>
+                    <!-- <option value="venta" id="venta">Venta</option>
+                    <option value="alquiler" id="alquiler">Alquiler</option>
+                    <option value="permuta" id="permuta">Permuta</option> -->
+                </select>
+                
+                <label for="txtDescripcion">DESCRIPCIÓN</label>
+                <input type="text" name="descripcion" id="txtDescripcion" placeholder="Descripcion" required>
+                
+                <label for="txtPrecio">PRECIO:</label>
+                <input type="number" name="precio" id="txtPrecio" min="1" placeholder="Precio" required>
+                
+                <img class="icon" src="img/puerta.png" alt="">
+                <label for="txtPuertas">CANTIDAD DE PUERTAS: </label>
+                <input type="number" name="puertas" id="txtPuertas" min="3" class="form-control" placeholder="Puertas" required>
+                
+                <img class="icon" src="./img/tablero.png" alt="">
+                <label for="txtKm">KILOMETRAJE DEL VEHÍCULO:</label>
+                <input type="number" name="km" id="txtKm" min="0" class="form-control" placeholder="KMs" required>
+                
+                <img class="icon" src="./img/caja-de-cambios.png" alt="">
+                <label for="txtPotencia">POTENCIA:</label>
+                <input type="number" name="potencia" id="txtPotencia" min="0" class="form-control" placeholder="Potencia" required>
+
+            
+                <button type="submit" value="Guardar" class="btn btn-success">
+                    <img src="./img/salvar.png" alt="diskette" height="22px">
+                    Guardar
+                </button>
+                
+            </form>
+        </fieldset>
+
+
+        <!-- checkbox -->
+        <div class="row mt-4 filterShow__checkbox container" id='filtroCheckbox'>
+            <div class="col form"> 
+                <div class="checkboxContainer form py-3 d-flex justify-content-around flex-wrap">
+                    
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="tituloChk" value="tituloChk" checked>
+                        <label class="custom-control-label" for="tituloChk">Titulo</label>
+                    </div>
+                    
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="transaccionChk" value="transaccionChk" checked>
+                        <label class="custom-control-label" for="transaccionChk">Transaccion</label>
+                    </div>
+                    
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="descripcionChk" value="descripcionChk" checked>
+                        <label class="custom-control-label" for="descripcionChk">Descripcion</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="precioChk" value="precioChk" checked>
+                        <label class="custom-control-label" for="precioChk">Precio</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="puertasChk" value="puertasChk" checked>
+                        <label class="custom-control-label" for="puertasChk">Puertas</label>
+                    </div>
+                    
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="numeroKmsChk" value="numeroKmsChk" checked>
+                        <label class="custom-control-label" for="numeroKmsChk">KMs</label>
+                    </div>
+                    
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="potenciaChk" value="potenciaChk" checked>
+                        <label class="custom-control-label" for="potenciaChk">Potencia</label>
+                    </div>
+                    
+                </div>
+                <div class="mt-2 justify-content-around" style="display: flex;">
+                    <button class="btn btn-succcess align-self-center" id="btnPreferencias" ></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="botonesTabla" style="display: none;" class="container">
+            
+            <div  class="d-flex flex-row justify-content-start">
+                <button id="btnEditar" class="btn btn-warning">Modificar</button>
+                <button id='btnBaja' class="btn btn-danger">Eliminar</button>
+                <button type="reset"  id='btnCancelar' class="btn btn-dark">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- FILTROS -->
+        <div class="form filterBox">
+            <div class="card-body container border rounded filtros">
+                <div class="row align-items-center">
+                    <div class="div_transaccion col">
+                        <label for="filtrarTransaccion">FILTRAR TRANSACCION:</label>
+                        <select class="content__form-input custom-select" name="filtrarTransaccion" id="filtrarTransaccion">
+                            <option value="" disabled selected>---Elegir---</option>
+                            <!-- <option value="alquiler">Alquiler</option>
+                            <option value="venta">Venta</option>
+                            <option value="permuta">Permuta</option> -->
+                            <option value="potencia">Potencia</option>
+                        </select>
+                    </div>
+                    <div class="div_promedio col">
+                        <label for="filtrarPromedio">PROMEDIO/POTENCIA: </label>
+                        <br>
+                        <input class="content__form-input form-control" name="promedio" type="text" id="filtrarPromedio" placeholder="N/A" readonly  />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form filterBox">
+            <div class="card-body container border rounded filtros">
+                <div class="row align-items-center">
+                    <div class="div_precio col">
+                        <label for="filtrarPrecio">PRECIO:</label>
+                        <select class="content__form-input custom-select" name="filtrarPrecio" id="filtrarPrecio">
+                            <option value="" disabled selected>---Elegir---</option>
+                            <option value="maximo">Precio Maximo</option>
+                            <option value="minimo">Precio Minimo</option>
+                            <option value="potencia">Potencia</option>
+                        </select>
+                    </div>
+                    <div class="div_promedio col">
+                        <label for="filtrarResultado">RESULTADO</label>
+                        <br>
+                        <input class="content__form-input form-control" name="promedio" type="text" id="filtrarResultado" placeholder="N/A" readonly  />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="spinner"></div>
+
+        <div id="divTabla" class="container">
+            <table id="tabla" class="table table-bordered table-striped table-hover">
+                
+            </table>
+        </div>
+        <div id="spinner"></div>
+
+        <div class="row justify-content-center">
+            <div class="container-fluid">
+                <div id="footer" class="col-12 footer bg-dark d-flex d-inline-flex flex-row align-items-center justify-content-around mt-5">
+                    <div class="nav">
+                        <a href="#">Nosotros</a>
+                        <a href="#">Anuncios</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contacto</a>
+                    </div>
+                    <div class="p text-white align-self-center">Todos los derechos reservados 2020 &copy;</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
