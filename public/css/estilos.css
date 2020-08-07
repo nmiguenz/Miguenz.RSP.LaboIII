@@ -51,12 +51,16 @@ label[for='alquiler'], label[for='venta']{
 }
 
 #divTabla, .form, fieldset, .card{
-    width:80%; 
+    width:90%; 
     margin:20px auto;
     padding: 10px;
     text-align:left;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
     border-radius: 10px;  
+    /* overflow: auto; */
+}
+
+#divTabla{
     overflow: auto;
 }
 
@@ -75,7 +79,7 @@ p{
 }
 
 .filtros{
-    background-color: gray;
+    background-color:#ff5c5c;
     padding-left: 1.5rem;
     padding-top: 1.5rem;
     padding-right: 1.5rem;
@@ -86,10 +90,6 @@ p{
     padding-left: 0;
 }
 
-
-#imgContainer{    
-    text-align: center;
-}
 
 #banner{
     width: 100%;
@@ -127,7 +127,7 @@ p{
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::after {
-    background-color: RGB(219, 75, 75);
+    background-color: #ff5c5c
 }
 
 a{
@@ -154,15 +154,6 @@ a{
     margin-left: 20px;
 }
 
-#banner{
-    width: 100%;
-    margin: 0px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 250px;
-    border-radius: 10px;  
-}
-
 #footer {
     height: 100px;
   }
@@ -177,5 +168,5 @@ a{
         display: flex;
         flex-direction: column;
     }
-} 
 
+}

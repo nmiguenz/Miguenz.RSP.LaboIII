@@ -1,0 +1,30 @@
+{
+  "name": "2parcial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data_access.js",
+  "dependencies": {
+    "casperjs": "^1.1.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.2.1",
+    "multer": "^1.3.1",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igciez/cieza.PPLABIII3D.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igciez/cieza.PPLABIII3D/issues"
+  },
+  "homepage": "https://github.com/igciez/cieza.PPLABIII3D#readme"
+}

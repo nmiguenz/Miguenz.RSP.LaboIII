@@ -39,7 +39,7 @@
                 array.forEach(element => {
                     delete element.active;
                 });
-                setTimeout(function () { cb(response, "Carga Exitosa", array) }, 2000);
+                setTimeout(function () { cb(response, "Carga Exitosa", array) }, 5000);
             });
 
             //return array;
@@ -54,8 +54,7 @@
                     array = JSON.parse(data);
                     let id = getID(array);
                     nuevoObjeto.id = id;
-                    console.log(typeof(id));
-
+                    console.log(id);
                     nuevoObjeto.active = "true";
 
                     array.push(nuevoObjeto);
@@ -82,15 +81,15 @@
         },
         update: function (cb, response, nuevoObjeto) {
             nuevoObjeto.active = "true";
-
             var array = new Array();
+            
             require('fs').readFile(__dirname + '\\data\\data.json', 'utf8', function (err, data) {
                 if (err) {
                     // error handling
                 }
                 array = JSON.parse(data);
                 //obtengo index del id que necesito
-                var index = array.findIndex(function (obj) { return obj.id === nuevoObjeto.id || obj.id.toString() === nuevoObjeto.id; })
+                var index = array.findIndex(function (obj) { return obj.id === nuevoObjeto.id.toString() || obj.id.toString() === nuevoObjeto.id; })
                 array[index] = nuevoObjeto;
 
                 require('fs').writeFileSync(__dirname + '\\data\\data.json', JSON.stringify(array));
